@@ -15,5 +15,6 @@ script:
   - fastlane tests
 
 deploy:
-  - fastlane screenshots
-  - fastlane nightly
+  skip_cleanup: true
+  provider: script
+  script: fastlane screenshots && fastlane nightly
