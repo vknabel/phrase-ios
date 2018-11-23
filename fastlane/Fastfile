@@ -14,6 +14,7 @@
 # update_fastlane
 
 default_platform(:ios)
+setup_travis
 
 platform :ios do
   lane :nightly do
@@ -24,7 +25,7 @@ platform :ios do
     run_tests(
       workspace: "Phrase.xcworkspace",
       devices: ["iPhone XS", "iPhone 6s"],
-      scheme: "Phrase"
+      scheme: "Phrase",
     )
   end
 
@@ -40,15 +41,6 @@ platform :ios do
     )
     release = "#{version}-build.#{build_number}+#{git_branch}"
 
-    git_commit(
-      path: "Phrase.xcodeproj",
-      message: "[fastlane] #{release}",
-    )
-    add_git_tag(
-      tag: release,
-    )
-    push_git_tags
-
     set_github_release(
       repository_name: "vknabel/phrase-ios",
       api_token: ENV["GITHUB_API_TOKEN"],
@@ -56,9 +48,9 @@ platform :ios do
       tag_name: release,
       is_prerelease: true,
       is_draft: false,
-      upload_assets: ["screenshots"],
+      upload_assets: ["fastlane/screenshots"],
       commitish: last_git_commit[:commit_hash],
-      description: text,
+      description: "(fastlane) #{release}",
     )
   end
 end
