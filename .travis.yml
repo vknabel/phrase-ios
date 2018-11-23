@@ -12,13 +12,8 @@ before_install:
   - carthage bootstrap --verbose --no-use-binaries --platform iOS --cache-builds
 
 script:
-  - fastlane screenshots
-  - >
-  xcodebuild -scheme Phrase
-  -enableCodeCoverage YES
-  -sdk iphonesimulator
-  -destination 'platform=iOS Simulator,name=iPhone XS,OS=12.1'
-  test | xcpretty
+  - fastlane tests
 
 deploy:
+  - fastlane screenshots
   - fastlane nightly
