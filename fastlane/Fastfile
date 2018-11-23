@@ -1,0 +1,64 @@
+# This file contains the fastlane.tools configuration
+# You can find the documentation at https://docs.fastlane.tools
+#
+# For a list of all available actions, check out
+#
+#     https://docs.fastlane.tools/actions
+#
+# For a list of all available plugins, check out
+#
+#     https://docs.fastlane.tools/plugins/available-plugins
+#
+
+# Uncomment the line if you want fastlane to automatically update itself
+# update_fastlane
+
+default_platform(:ios)
+
+platform :ios do
+  lane :nightly do
+    release_tag
+  end
+
+  lane :tests do
+    run_tests(
+      workspace: "Phrase.xcworkspace",
+      devices: ["iPhone XS", "iPhone 6s"],
+      scheme: "Phrase"
+    )
+  end
+
+  desc "Generate new localized screenshots"
+  lane :screenshots do
+    capture_screenshots(workspace: "Phrase.xcworkspace", scheme: "Phrase")
+  end
+
+  private_lane :release_tag do |options|
+    version = get_version_number
+    build_number = increment_build_number(
+      build_number: ENV["TRAVIS_BUILD_NUMBER"],
+    )
+    release = "#{version}-build.#{build_number}+#{git_branch}"
+
+    git_commit(
+      path: "Phrase.xcodeproj",
+      message: "[fastlane] #{release}",
+    )
+    add_git_tag(
+      tag: release,
+    )
+    push_git_tags
+
+    set_github_release(
+      repository_name: "vknabel/phrase-ios",
+      api_token: ENV["GITHUB_API_TOKEN"],
+      name: release,
+      tag_name: release,
+      is_prerelease: true,
+      is_draft: false,
+      upload_assets: ["screenshots"],
+      commitish: last_git_commit[:commit_hash],
+      description: text,
+    )
+  end
+end

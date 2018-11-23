@@ -1,0 +1,24 @@
+osx_image: xcode10
+language: swift
+
+cache:
+  bundler: true
+  directories:
+    - Carthage
+
+before_install:
+  - brew update
+  - brew outdated carthage || brew upgrade carthage
+  - carthage bootstrap --verbose --no-use-binaries --platform iOS --cache-builds
+
+script:
+  - fastlane screenshots
+  - >
+  xcodebuild -scheme Phrase
+  -enableCodeCoverage YES
+  -sdk iphonesimulator
+  -destination 'platform=iOS Simulator,name=iPhone XS,OS=12.1'
+  test | xcpretty
+
+deploy:
+  - fastlane nightly
