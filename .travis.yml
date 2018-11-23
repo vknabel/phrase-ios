@@ -15,6 +15,10 @@ script:
   - set -o pipefail
   - fastlane tests
 
+branches:
+  except:
+    - /^[0-9]/
+
 deploy:
   skip_cleanup: true
   provider: script
