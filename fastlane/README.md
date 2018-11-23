@@ -21,6 +21,11 @@ or alternatively using `brew cask install fastlane`
 fastlane ios nightly
 ```
 
+### ios tests
+```
+fastlane ios tests
+```
+
 ### ios screenshots
 ```
 fastlane ios screenshots
