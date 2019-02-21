@@ -31,7 +31,11 @@ platform :ios do
 
   desc "Generate new localized screenshots"
   lane :screenshots do
-    capture_screenshots(workspace: "Phrase.xcworkspace", scheme: "Phrase")
+    capture_screenshots(
+      workspace: "Phrase.xcworkspace",
+      scheme: "Phrase",
+      devices: ["iPhone XS", "iPhone 6s"],
+    )
   end
 
   private_lane :release_tag do |options|
