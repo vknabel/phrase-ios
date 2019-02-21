@@ -30,6 +30,11 @@
 		BA6DA6A4219A2626006DB5E9 /* PhraseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA6DA6A3219A2626006DB5E9 /* PhraseTests.swift */; };
 		BA6DA6AF219A2626006DB5E9 /* PhraseUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA6DA6AE219A2626006DB5E9 /* PhraseUITests.swift */; };
 		BAA613E721A893B30016C37D /* SnapshotHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAA613E621A893B30016C37D /* SnapshotHelper.swift */; };
+		BAA641F42217217C005A7F41 /* MessageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAA641F32217217C005A7F41 /* MessageTableViewCell.swift */; };
+		BAA641F6221725C8005A7F41 /* MessagesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAA641F5221725C8005A7F41 /* MessagesTableViewController.swift */; };
+		BAA641F822172AB0005A7F41 /* MessageTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BAA641F722172AB0005A7F41 /* MessageTableViewCell.xib */; };
+		BAA641FA2217568A005A7F41 /* ProminentTabBarButtonDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAA641F92217568A005A7F41 /* ProminentTabBarButtonDelegate.swift */; };
+		BAC94B6F2203A2060063D3E9 /* ConversationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAC94B6E2203A2060063D3E9 /* ConversationViewController.swift */; };
 		BAF092A321A2A03600529DA9 /* StatusBarUnderlayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAF092A221A2A03600529DA9 /* StatusBarUnderlayView.swift */; };
 /* End PBXBuildFile section */
 
@@ -81,6 +86,11 @@
 		BA6DA6AE219A2626006DB5E9 /* PhraseUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhraseUITests.swift; sourceTree = "<group>"; };
 		BA6DA6B0219A2626006DB5E9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BAA613E621A893B30016C37D /* SnapshotHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SnapshotHelper.swift; path = fastlane/SnapshotHelper.swift; sourceTree = SOURCE_ROOT; };
+		BAA641F32217217C005A7F41 /* MessageTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageTableViewCell.swift; sourceTree = "<group>"; };
+		BAA641F5221725C8005A7F41 /* MessagesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessagesTableViewController.swift; sourceTree = "<group>"; };
+		BAA641F722172AB0005A7F41 /* MessageTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MessageTableViewCell.xib; sourceTree = "<group>"; };
+		BAA641F92217568A005A7F41 /* ProminentTabBarButtonDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProminentTabBarButtonDelegate.swift; sourceTree = "<group>"; };
+		BAC94B6E2203A2060063D3E9 /* ConversationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversationViewController.swift; sourceTree = "<group>"; };
 		BAF092A221A2A03600529DA9 /* StatusBarUnderlayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusBarUnderlayView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -134,18 +144,23 @@
 			isa = PBXGroup;
 			children = (
 				BA6DA68B219A2626006DB5E9 /* AppDelegate.swift */,
+				BAA641F92217568A005A7F41 /* ProminentTabBarButtonDelegate.swift */,
 				BA0FD79B21A066560036428C /* Mocks.swift */,
+				BA0FD7A721A095390036428C /* Theme.swift */,
 				BA0CC4C921A02534001BDA96 /* ProminentTabBar.swift */,
 				BA0CC4CE21A02BAD001BDA96 /* PhraseDetailsViewController.swift */,
 				BA0CC71021A02C33001BDA96 /* DomainModel.swift */,
 				BA6600C621A32B4B00393D11 /* StatusBarUnderlayingViewController.swift */,
 				BAF092A221A2A03600529DA9 /* StatusBarUnderlayView.swift */,
+				BAC94B6E2203A2060063D3E9 /* ConversationViewController.swift */,
 				BA0FD7A921A0A1F50036428C /* ConversationsTableViewController.swift */,
 				BA0FD7AF21A0A9EF0036428C /* ConversationTableViewCell.swift */,
 				BA0FD7B021A0A9EF0036428C /* ConversationTableViewCell.xib */,
 				BA0CC71221A05127001BDA96 /* PhrasesCollectionViewController.swift */,
 				BA0CC71621A053EA001BDA96 /* PhraseCollectionViewCell.swift */,
-				BA0FD7A721A095390036428C /* Theme.swift */,
+				BAA641F32217217C005A7F41 /* MessageTableViewCell.swift */,
+				BAA641F722172AB0005A7F41 /* MessageTableViewCell.xib */,
+				BAA641F5221725C8005A7F41 /* MessagesTableViewController.swift */,
 				BA0FD7A521A0829E0036428C /* RoundButton.swift */,
 				BA0FD7B321A0B3DB0036428C /* SourceSansPro.ttf */,
 				BA0FD7B521A0B62D0036428C /* SourceSansPro-Bold.ttf */,
@@ -289,6 +304,7 @@
 				BA0FD7A021A06F950036428C /* Langdon.otf in Resources */,
 				BA6DA699219A2626006DB5E9 /* LaunchScreen.storyboard in Resources */,
 				BA6DA696219A2626006DB5E9 /* Assets.xcassets in Resources */,
+				BAA641F822172AB0005A7F41 /* MessageTableViewCell.xib in Resources */,
 				BA0FD7B621A0B67A0036428C /* SourceSansPro-Bold.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -337,7 +353,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				BA0FD7A621A0829E0036428C /* RoundButton.swift in Sources */,
+				BAA641F6221725C8005A7F41 /* MessagesTableViewController.swift in Sources */,
 				BA6DA68C219A2626006DB5E9 /* AppDelegate.swift in Sources */,
+				BAC94B6F2203A2060063D3E9 /* ConversationViewController.swift in Sources */,
 				BA0CC71821A053EA001BDA96 /* PhraseCollectionViewCell.swift in Sources */,
 				BA6DA694219A2626006DB5E9 /* Phrase.xcdatamodeld in Sources */,
 				BA0FD79C21A066560036428C /* Mocks.swift in Sources */,
@@ -348,6 +366,8 @@
 				BA0FD7A821A095390036428C /* Theme.swift in Sources */,
 				BA0FD7B121A0A9EF0036428C /* ConversationTableViewCell.swift in Sources */,
 				BA0FD7AA21A0A1F50036428C /* ConversationsTableViewController.swift in Sources */,
+				BAA641F42217217C005A7F41 /* MessageTableViewCell.swift in Sources */,
+				BAA641FA2217568A005A7F41 /* ProminentTabBarButtonDelegate.swift in Sources */,
 				BA0CC4CA21A02534001BDA96 /* ProminentTabBar.swift in Sources */,
 				BA0CC4CF21A02BAD001BDA96 /* PhraseDetailsViewController.swift in Sources */,
 			);

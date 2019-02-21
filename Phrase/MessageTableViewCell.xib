@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="93" id="w83-EH-3gp" customClass="MessageTableViewCell" customModule="Phrase" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="202" height="93"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="w83-EH-3gp" id="9qS-cC-vzv">
+                <rect key="frame" x="0.0" y="0.0" width="202" height="92.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" horizontalHuggingPriority="1000" translatesAutoresizingMaskIntoConstraints="NO" id="OVa-Vd-4He">
+                        <rect key="frame" x="20" y="8" width="162" height="76.5"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="1000" verticalHuggingPriority="751" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hX3-QS-L7m">
+                                <rect key="frame" x="12" y="12" width="138" height="52.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="hX3-QS-L7m" firstAttribute="top" secondItem="OVa-Vd-4He" secondAttribute="top" constant="12" identifier="$LabelTop$" id="5WZ-gt-weF"/>
+                            <constraint firstAttribute="bottom" secondItem="hX3-QS-L7m" secondAttribute="bottom" constant="12" identifier="$LabelBottom$" id="9qk-o4-bhF"/>
+                            <constraint firstItem="hX3-QS-L7m" firstAttribute="leading" secondItem="OVa-Vd-4He" secondAttribute="leading" priority="750" constant="12" identifier="$LabelLeading$" id="cds-bY-hWl"/>
+                            <constraint firstAttribute="trailing" secondItem="hX3-QS-L7m" secondAttribute="trailing" priority="750" constant="12" identifier="$LabelTrailing$" id="vLo-0M-xTR"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                <constraints>
+                    <constraint firstAttribute="trailing" secondItem="hX3-QS-L7m" secondAttribute="trailing" constant="32" identifier="owner" id="55b-uB-kX7"/>
+                    <constraint firstItem="hX3-QS-L7m" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="9qS-cC-vzv" secondAttribute="leading" constant="32" identifier="owner" id="F19-jC-8I6"/>
+                    <constraint firstAttribute="bottom" secondItem="OVa-Vd-4He" secondAttribute="bottom" constant="8" id="Y8W-pG-Bbk"/>
+                    <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="hX3-QS-L7m" secondAttribute="trailing" constant="12" identifier="author" id="gBp-tT-VUR"/>
+                    <constraint firstItem="OVa-Vd-4He" firstAttribute="top" secondItem="9qS-cC-vzv" secondAttribute="top" constant="8" identifier="top" id="jmF-ac-iK1"/>
+                    <constraint firstItem="hX3-QS-L7m" firstAttribute="leading" secondItem="9qS-cC-vzv" secondAttribute="leading" constant="32" identifier="author" id="uFu-Cn-f4q"/>
+                </constraints>
+            </tableViewCellContentView>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <connections>
+                <outlet property="container" destination="OVa-Vd-4He" id="Nof-bf-3E2"/>
+                <outlet property="contentsLabel" destination="hX3-QS-L7m" id="aAl-gP-qfc"/>
+            </connections>
+            <point key="canvasLocation" x="-90" y="2"/>
+        </tableViewCell>
+    </objects>
+</document>

@@ -32,14 +32,14 @@ class PhraseDetailsViewController: UIViewController {
     }
 }
 
-func preparePhraseView(for phrase: Phrase, scale: CGFloat = 1.0) -> (UIView) -> Void {
+func preparePhraseView(for phrase: Phrase, scale: CGFloat = 1.0, swapColors: Bool = false) -> (UIView) -> Void {
     return { containerView in
         let partViews = phrase.lines.map { line -> UILabel in
             return with(
                 UILabel(), concat(
                     mut(\.font, UIFont(name: line.fontType.rawValue, size: line.size.cgFloat * scale)),
                     mut(\.text, line.content),
-                    mut(\.textColor, phrase.foregroundColor.uiColor)
+                    mut(\.textColor, swapColors ? phrase.backgroundColor.uiColor : phrase.foregroundColor.uiColor)
                 )
             )
         }
@@ -51,7 +51,7 @@ func preparePhraseView(for phrase: Phrase, scale: CGFloat = 1.0) -> (UIView) -> 
                 mut(\.translatesAutoresizingMaskIntoConstraints, false)
             )
         )
-        containerView.backgroundColor = phrase.backgroundColor.uiColor
+        containerView.backgroundColor = swapColors ? phrase.foregroundColor.uiColor : phrase.backgroundColor.uiColor
         containerView.addSubview(phraseView)
         
         NSLayoutConstraint.activate(

@@ -13,7 +13,6 @@ class ConversationsTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         tableView.registerNibCellType(ConversationTableViewCell.self)
         tableView.separatorStyle = .none
         tableView.separatorInset = .zero
@@ -39,15 +38,16 @@ class ConversationsTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let details = PhraseDetailsViewController(phrase: conversations[indexPath.item].phrase)
-        present(details, animated: true) {
-            sleep(2)
-            details.dismiss(animated: true)
-        }
+        let conversation = ConversationViewController(conversation: conversations[indexPath.row])
+        navigationController?.pushViewController(conversation, animated: true)
     }
     
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return .lightContent
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        navigationController?.setNavigationBarHidden(true, animated: animated)
     }
 }
 
@@ -58,8 +58,8 @@ extension UITableView {
     
     func registerNibCellType<C: UITableViewCell>(_ cell: C.Type) {
         register(
-            UINib(nibName: String(describing: ConversationTableViewCell.self), bundle: nil),
-            forCellReuseIdentifier: String(describing: ConversationTableViewCell.self)
+            UINib(nibName: String(describing: C.self), bundle: nil),
+            forCellReuseIdentifier: String(describing: C.self)
         )
     }
     

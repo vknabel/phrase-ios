@@ -77,3 +77,12 @@ let mockedConversationsPhrases = [
 }
 
 let mockedPhrase = mockedPhrases.randomElement()!
+
+let mockedMessages = Array([
+    Message(text: "Hallo", phraseID: 1, sendByAuthor: true),
+    Message(text: "Hi", phraseID: 1, sendByAuthor: false),
+    Message(text: "Was geht?", phraseID: 1, sendByAuthor: true),
+    Message(text: "Nix.", phraseID: 1, sendByAuthor: false),
+    Message(text: "Lorem ipsum dolor sit amet", phraseID: 1, sendByAuthor: true),
+    Message(text: "Cool", phraseID: 1, sendByAuthor: false),
+].reversed())

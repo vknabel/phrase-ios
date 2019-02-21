@@ -13,6 +13,7 @@ import UIKit
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
+    var subscriptions: [AnyObject] = []
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
@@ -28,6 +29,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         )
         window!.rootViewController = tabBarController
         window!.makeKeyAndVisible()
+        
+        let prominentTabBarButtonDelegate = ProminentTabBarButtonDelegate()
+        subscriptions.append(prominentTabBarButtonDelegate)
         tabBarController.viewControllers = [
             with(
                 PhrasesCollectionViewController(phrases: mockedPhrases), concat(
@@ -35,8 +39,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 )
             ),
             with(
-                StatusBarUnderlayingViewController(embed: ConversationsTableViewController()), concat(
-                    mut(\.tabBarItem, UITabBarItem(tabBarSystemItem: UITabBarItem.SystemItem.favorites, tag: 0))
+                UINavigationController.init(rootViewController: StatusBarUnderlayingViewController(embed: ConversationsTableViewController())), concat(
+                    mut(\.tabBarItem, UITabBarItem(tabBarSystemItem: UITabBarItem.SystemItem.favorites, tag: 0)),
+                    mut(\.navigationBar.barStyle, UIBarStyle.blackTranslucent),
+                    mut(\.delegate, prominentTabBarButtonDelegate)
                 )
             ),
         ]
