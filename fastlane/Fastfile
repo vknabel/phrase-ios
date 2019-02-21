@@ -34,7 +34,7 @@ platform :ios do
     capture_screenshots(
       workspace: "Phrase.xcworkspace",
       scheme: "Phrase",
-      devices: ["iPhone XS", "iPhone 6s"],
+      devices: ["iPhone XS", "iPhone 6s", "iPhone XS Max", "iPhone 8 Plus"],
     )
   end
 
