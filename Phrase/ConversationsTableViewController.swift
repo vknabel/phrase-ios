@@ -16,7 +16,7 @@ class ConversationsTableViewController: UITableViewController {
         tableView.registerNibCellType(ConversationTableViewCell.self)
         tableView.separatorStyle = .none
         tableView.separatorInset = .zero
-        tableView.backgroundColor = .black
+        tableView.backgroundColor = Theme.backgroundColor
         tableView.insetsLayoutMarginsFromSafeArea = true
         tableView.insetsContentViewsToSafeArea = true
         tableView.contentInset = .init(top: marginUnits(1), left: 0, bottom: marginUnits(3), right: 0)
@@ -43,7 +43,13 @@ class ConversationsTableViewController: UITableViewController {
     }
     
     override var preferredStatusBarStyle: UIStatusBarStyle {
-        return .lightContent
+        if traitCollection.userInterfaceStyle == .dark {
+            return .lightContent
+        } else if #available(iOS 13.0, *) {
+            return .darkContent
+        } else {
+            return .lightContent
+        }
     }
     
     override func viewWillAppear(_ animated: Bool) {

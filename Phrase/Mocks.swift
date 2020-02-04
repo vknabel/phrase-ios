@@ -9,12 +9,12 @@
 import Foundation
 
 let mockedPhrases = [
-    (Color.purple, Color.lavender),
-    (Color.yellow, Color.black),
-    (Color.cyan, Color.black),
+    (Color.indigo, Color.pink),
+    (Color.yellow, Color.background),
+    (Color.teal, Color.label),
     (Color.red, Color.orange),
-    (Color.blue, Color.lemonGrass),
-    (Color.grey, Color.black),
+    (Color.blue, Color.green),
+    (Color.gray, Color.background),
 ]
 .map { mock in
     Phrase(
@@ -41,12 +41,12 @@ let mockedPhrases = [
 }
 
 let mockedConversationsPhrases = [
-    (Color.purple, Color.lavender),
-    (Color.yellow, Color.black),
-    (Color.cyan, Color.black),
+    (Color.indigo, Color.pink),
+    (Color.yellow, Color.background),
+    (Color.teal, Color.label),
     (Color.red, Color.orange),
-    (Color.blue, Color.lemonGrass),
-    (Color.grey, Color.black),
+    (Color.blue, Color.green),
+    (Color.gray, Color.background),
 ]
 .map { mock in
     Conversation(

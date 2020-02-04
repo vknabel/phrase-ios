@@ -28,11 +28,11 @@ class MessagesTableViewController: UITableViewController {
         tableView.allowsSelection = false
         tableView.separatorStyle = .none
         tableView.separatorInset = .zero
-        tableView.backgroundColor = .black
+        tableView.backgroundColor = Theme.backgroundColor
         tableView.insetsLayoutMarginsFromSafeArea = true
         tableView.insetsContentViewsToSafeArea = true
         tableView.contentInset = .init(top: marginUnits(8), left: 0, bottom: marginUnits(1), right: 0)
-        tableView.indicatorStyle = .white
+        tableView.indicatorStyle = .white // TODO: light mode
         tableView.rowHeight = UITableView.automaticDimension
         tableView.transform = CGAffineTransform(scaleX: 1, y: -1)
     }

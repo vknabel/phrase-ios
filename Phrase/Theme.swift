@@ -10,6 +10,22 @@ import Overture
 import UIKit
 
 class Theme {
+    static var backgroundColor: UIColor {
+        if #available(iOS 13.0, *) {
+            return .systemBackground
+        } else {
+            return .black
+        }
+    }
+    
+    static var contrastColor: UIColor {
+        if #available(iOS 13.0, *) {
+            return .label
+        } else {
+            return .white
+        }
+    }
+    
     private(set) static var tintColor: UIColor = mockedPhrases.randomElement()!.backgroundColor.uiColor {
         didSet {
             DispatchQueue.main.async {
@@ -19,7 +35,7 @@ class Theme {
         }
     }
 
-    static let prominentButton = with(RoundButton(), prominentCreationButton(color: tintColor))
+    static let prominentButton: UIButton = updateObject(RoundButton(), prominentCreationButton(color: tintColor))
 
     static func setCurrentPhrase(_ phrase: Phrase) {
         tintColor = phrase.backgroundColor.uiColor

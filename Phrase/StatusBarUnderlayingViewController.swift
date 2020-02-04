@@ -38,6 +38,12 @@ class StatusBarUnderlayingViewController<Child: UIViewController>: UIViewControl
     }
     
     override var preferredStatusBarStyle: UIStatusBarStyle  {
-        return .lightContent
+        if traitCollection.userInterfaceStyle == .dark {
+            return .lightContent
+        } else if #available(iOS 13.0, *) {
+            return .darkContent
+        } else {
+            return .lightContent
+        }
     }
 }

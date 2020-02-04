@@ -77,7 +77,8 @@ struct Line: Equatable, Codable {
 }
 
 enum Color: String, Codable, CaseIterable {
-    case light, dark, grey, red, green, blue, yellow, purple, cyan, lavender, orange, lemonGrass, black
+    case background, label
+    case red, orange, yellow, green, teal, blue, indigo, purple, pink,  gray
 }
 
 import UIKit
@@ -85,32 +86,42 @@ import UIKit
 extension Color {
     var uiColor: UIColor {
         switch self {
-        case .blue:
-            return .init(rgb: 0x4A90E2)
-        case .dark:
-            return UIColor.darkGray
-        case .black:
-            return UIColor.black
-        case .green:
-            return .green
-        case .light:
-            return .lightGray
-        case .lemonGrass:
-            return .init(rgb: 0xB8E986)
-        case .grey:
-            return .init(rgb: 0x9B9B9B)
         case .red:
-            return .init(rgb: 0xD0021B)
+            return .systemRed
         case .orange:
-            return .init(rgb: 0xF5A623)
-        case .purple:
-            return .init(rgb: 0x9013FE)
-        case .lavender:
-            return .init(rgb: 0xCB86E9)
+            return .systemOrange
         case .yellow:
-            return .init(rgb: 0xF8E71C)
-        case .cyan:
-            return .init(rgb: 0x50E3C2)
+            return .systemYellow
+        case .green:
+            return .systemGreen
+        case .teal:
+            return .systemTeal
+        case .blue:
+            return .systemBlue
+        case .indigo:
+            if #available(iOS 13.0, *) {
+                return .systemIndigo
+            } else {
+                return .purple // TODO: copy
+            }
+        case .purple:
+            return .systemPurple
+        case .pink:
+            return .systemPink
+        case .gray:
+            return .systemGray
+        case .background:
+            if #available(iOS 13.0, *) {
+                return .systemBackground
+            } else {
+                return .black // TODO: copy
+            }
+        case .label:
+            if #available(iOS 13.0, *) {
+                return .label
+            } else {
+                return .white // TODO: copy
+            }
         }
     }
 }

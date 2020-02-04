@@ -22,6 +22,7 @@
 		BA0FD7B221A0A9EF0036428C /* ConversationTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BA0FD7B021A0A9EF0036428C /* ConversationTableViewCell.xib */; };
 		BA0FD7B421A0B3DB0036428C /* SourceSansPro.ttf in Resources */ = {isa = PBXBuildFile; fileRef = BA0FD7B321A0B3DB0036428C /* SourceSansPro.ttf */; };
 		BA0FD7B621A0B67A0036428C /* SourceSansPro-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = BA0FD7B521A0B62D0036428C /* SourceSansPro-Bold.ttf */; };
+		BA2FCBB023432D6C007829D4 /* PhraseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA2FCBAF23432D6C007829D4 /* PhraseView.swift */; };
 		BA6600C721A32B4B00393D11 /* StatusBarUnderlayingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA6600C621A32B4B00393D11 /* StatusBarUnderlayingViewController.swift */; };
 		BA6DA68C219A2626006DB5E9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA6DA68B219A2626006DB5E9 /* AppDelegate.swift */; };
 		BA6DA694219A2626006DB5E9 /* Phrase.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = BA6DA692219A2626006DB5E9 /* Phrase.xcdatamodeld */; };
@@ -72,6 +73,7 @@
 		BA0FD7B021A0A9EF0036428C /* ConversationTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ConversationTableViewCell.xib; sourceTree = "<group>"; };
 		BA0FD7B321A0B3DB0036428C /* SourceSansPro.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = SourceSansPro.ttf; sourceTree = "<group>"; };
 		BA0FD7B521A0B62D0036428C /* SourceSansPro-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SourceSansPro-Bold.ttf"; sourceTree = "<group>"; };
+		BA2FCBAF23432D6C007829D4 /* PhraseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhraseView.swift; sourceTree = "<group>"; };
 		BA6600C621A32B4B00393D11 /* StatusBarUnderlayingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusBarUnderlayingViewController.swift; sourceTree = "<group>"; };
 		BA6DA688219A2626006DB5E9 /* Phrase.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Phrase.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BA6DA68B219A2626006DB5E9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -149,6 +151,7 @@
 				BA0FD7A721A095390036428C /* Theme.swift */,
 				BA0CC4C921A02534001BDA96 /* ProminentTabBar.swift */,
 				BA0CC4CE21A02BAD001BDA96 /* PhraseDetailsViewController.swift */,
+				BA2FCBAF23432D6C007829D4 /* PhraseView.swift */,
 				BA0CC71021A02C33001BDA96 /* DomainModel.swift */,
 				BA6600C621A32B4B00393D11 /* StatusBarUnderlayingViewController.swift */,
 				BAF092A221A2A03600529DA9 /* StatusBarUnderlayView.swift */,
@@ -263,13 +266,16 @@
 				TargetAttributes = {
 					BA6DA687219A2626006DB5E9 = {
 						CreatedOnToolsVersion = 10.1;
+						LastSwiftMigration = 1100;
 					};
 					BA6DA69E219A2626006DB5E9 = {
 						CreatedOnToolsVersion = 10.1;
+						LastSwiftMigration = 1100;
 						TestTargetID = BA6DA687219A2626006DB5E9;
 					};
 					BA6DA6A9219A2626006DB5E9 = {
 						CreatedOnToolsVersion = 10.1;
+						LastSwiftMigration = 1100;
 						TestTargetID = BA6DA687219A2626006DB5E9;
 					};
 				};
@@ -369,6 +375,7 @@
 				BAA641F42217217C005A7F41 /* MessageTableViewCell.swift in Sources */,
 				BAA641FA2217568A005A7F41 /* ProminentTabBarButtonDelegate.swift in Sources */,
 				BA0CC4CA21A02534001BDA96 /* ProminentTabBar.swift in Sources */,
+				BA2FCBB023432D6C007829D4 /* PhraseView.swift in Sources */,
 				BA0CC4CF21A02BAD001BDA96 /* PhraseDetailsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -549,9 +556,9 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.vknabel.Phrase;
+				PRODUCT_BUNDLE_IDENTIFIER = com.vknabel.PhraseOld;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 				VERSIONING_SYSTEM = "apple-generic";
 			};
@@ -573,9 +580,9 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.vknabel.Phrase;
+				PRODUCT_BUNDLE_IDENTIFIER = com.vknabel.PhraseOld;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 				VERSIONING_SYSTEM = "apple-generic";
 			};
@@ -596,7 +603,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.vknabel.PhraseTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Phrase.app/Phrase";
 			};
@@ -617,7 +624,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.vknabel.PhraseTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Phrase.app/Phrase";
 			};
@@ -637,7 +644,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.vknabel.PhraseUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_TARGET_NAME = Phrase;
 			};
@@ -657,7 +664,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.vknabel.PhraseUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_TARGET_NAME = Phrase;
 			};

@@ -11,7 +11,7 @@ import UIKit
 extension UIView {
     func addStatusBarUnderlay() {
         let statusbarUnderlay = UIView()
-        statusbarUnderlay.backgroundColor = .black
+        statusbarUnderlay.backgroundColor = Theme.backgroundColor
         statusbarUnderlay.translatesAutoresizingMaskIntoConstraints = false
         self.addSubview(statusbarUnderlay)
         statusbarUnderlay.topAnchor.constraint(equalTo: self.topAnchor).isActive = true

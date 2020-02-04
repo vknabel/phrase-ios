@@ -39,7 +39,7 @@ public func prominentCreationButton(color: UIColor) -> (UIButton) -> Void {
         button.layer.shadowOpacity = 0.5
         button.layer.shadowOffset = CGSize(width: 0, height: -2)
         button.layer.shadowRadius = marginUnits(1)
-        button.layer.shadowColor = UIColor.black.cgColor
+        button.layer.shadowColor = UIColor.black.cgColor // TODO: light mode
         button.clipsToBounds = true
         button.isUserInteractionEnabled = true
         button.sizeToFit()

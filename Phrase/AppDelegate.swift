@@ -23,7 +23,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let tabBarController = UITabBarController(nibName: nil, bundle: nil)
         with(
             tabBarController, concat(
-                mut(\.tabBar.barStyle, .black),
+                // mut(\UITabBarController.tabBar.barStyle, .black), // TODO: light mode
                 prominentSubview(Theme.prominentButton)
             )
         )
@@ -33,15 +33,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let prominentTabBarButtonDelegate = ProminentTabBarButtonDelegate()
         subscriptions.append(prominentTabBarButtonDelegate)
         tabBarController.viewControllers = [
-            with(
+            update(
                 PhrasesCollectionViewController(phrases: mockedPhrases), concat(
-                    mut(\.tabBarItem, UITabBarItem(tabBarSystemItem: UITabBarItem.SystemItem.favorites, tag: 0))
+                    mut(\UIViewController.tabBarItem, UITabBarItem(tabBarSystemItem: UITabBarItem.SystemItem.favorites, tag: 0))
                 )
             ),
-            with(
+            update(
                 UINavigationController.init(rootViewController: StatusBarUnderlayingViewController(embed: ConversationsTableViewController())), concat(
                     mut(\.tabBarItem, UITabBarItem(tabBarSystemItem: UITabBarItem.SystemItem.favorites, tag: 0)),
-                    mut(\.navigationBar.barStyle, UIBarStyle.blackTranslucent),
+                    // mut(\.navigationBar.barStyle, UIBarStyle.blackTranslucent), // TODO: light mode
                     mut(\.delegate, prominentTabBarButtonDelegate)
                 )
             ),

@@ -30,14 +30,14 @@ class ConversationViewController: UIViewController {
     
     override func loadView() {
         view = UIView()
-        view.backgroundColor = .black
-        navigationItem.titleView = with(UIView(), preparePhraseView(
+        view.backgroundColor = Theme.backgroundColor
+        navigationItem.titleView = updateObject(UIView(), preparePhraseView(
             for: conversation.phrase,
             scale: 0.3,
             swapColors: true
         ))
         navigationController?.navigationBar.isTranslucent = false
-        navigationController?.navigationBar.barTintColor = .black
+        navigationController?.navigationBar.barTintColor = Theme.backgroundColor
         navigationController?.navigationBar.shadowImage = UIImage()
 
         addChild(messagesViewController)
@@ -87,7 +87,13 @@ class ConversationViewController: UIViewController {
     }
     
     override var preferredStatusBarStyle: UIStatusBarStyle {
-        return .lightContent
+        if traitCollection.userInterfaceStyle == .dark {
+            return .lightContent
+        } else if #available(iOS 13.0, *) {
+            return .darkContent
+        } else {
+            return .lightContent
+        }
     }
     
     /*

@@ -22,8 +22,9 @@ class PhrasesCollectionViewController: UICollectionViewController, UICollectionV
         super.init(collectionViewLayout: layout)
         
         collectionView.registerCellType(PhraseCollectionViewCell.self)
+        collectionView.backgroundColor = Theme.backgroundColor
         collectionView.contentInsetAdjustmentBehavior = .always
-        collectionView.indicatorStyle = .white
+        collectionView.indicatorStyle = .white // TODO: light mode
         collectionView.contentInset = .init(
             top: marginUnits(2),
             left: marginUnits(2),
@@ -70,7 +71,13 @@ class PhrasesCollectionViewController: UICollectionViewController, UICollectionV
     }
     
     override var preferredStatusBarStyle: UIStatusBarStyle {
-        return .lightContent
+        if traitCollection.userInterfaceStyle == .dark {
+            return .lightContent
+        } else if #available(iOS 13.0, *) {
+            return .darkContent
+        } else {
+            return .lightContent
+        }
     }
 }
 
